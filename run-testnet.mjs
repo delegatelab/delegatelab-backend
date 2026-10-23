@@ -1,0 +1,2 @@
+import {readFile,writeFile} from 'node:fs/promises';import {runSignedSuite,sdk} from './network.mjs';
+const dir=new URL('./.private/',import.meta.url);const d=JSON.parse(await readFile(new URL('deployment.json',dir),'utf8'));const key=sdk.Keypair.fromSecret(JSON.parse(await readFile(new URL('identity.private.json',dir),'utf8')).secret);const suite=await runSignedSuite(d,key);await writeFile(new URL('run-evidence.json',dir),JSON.stringify(suite,null,2));console.log(suite.runs.map(r=>({fixture:r.fixture,status:r.report.status})));
