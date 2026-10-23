@@ -1,0 +1,1 @@
+{"name":"@delegatelab/backend","version":"0.1.0","private":true,"type":"module","license":"MIT","engines":{"node":">=24"},"dependencies":{"@stellar/stellar-sdk":"17.3.0"},"scripts":{"start":"node --env-file-if-exists=.env server.mjs","test":"node --test test.mjs","verify:testnet":"node verify-testnet.mjs"}}
